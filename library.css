@@ -1,5 +1,10 @@
 :root {
     box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+body {
+    background: black;
 }
 
 #content {
@@ -13,18 +18,66 @@
 
 }
 
+h1 {
+    display: inline;
+}
+
 #library {
+    background: white;
     display: grid;
     grid-template: 150px / repeat(4,150px);
+}
+
+#footer {
+    text-align: center;
+    padding: 5px;
+    background: teal;
 }
 
 .book {
     background: seashell;
     border: 1px solid sienna;
     margin: 2px;
+    overflow: hidden;
+    display: grid;
+    place-items: stretch center;
+    text-align: center;
+    grid-template-areas:
+    "cover cover"
+    "title title"
+    "author author"
+    "pages status"
+}
+
+.cover {
+    background: grey;
+    width:50px;
+    height: 70px;
+    grid-area: cover;
+    margin: 3px;
 
 }
 
-#footer {
-    background-color: black;
+.book h3 {
+    margin: 0;
+    grid-area: title;
+}
+
+.author {
+    grid-area: author;
+}
+
+.pages {
+    grid-area: pages;
+}
+
+.status {
+    grid-area: status;
+    background: green;
+    justify-self: stretch;
+    color: white;
+}
+
+.book p {
+    margin: 0;
 }
