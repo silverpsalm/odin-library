@@ -18,6 +18,13 @@
     grid-template: 150px / repeat(4,150px);
 }
 
+.book {
+    background: seashell;
+    border: 1px solid sienna;
+    margin: 2px;
+
+}
+
 #footer {
     background-color: black;
 }
