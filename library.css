@@ -1,0 +1,23 @@
+:root {
+    box-sizing: border-box;
+}
+
+#content {
+    display: grid;
+    grid-template: 1fr 5fr 1fr / 1fr;
+}
+
+#nav {
+    background-color: teal;
+    padding: 5px;
+
+}
+
+#library {
+    display: grid;
+    grid-template: 150px / repeat(4,150px);
+}
+
+#footer {
+    background-color: black;
+}
