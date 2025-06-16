@@ -1,16 +1,20 @@
 const myLibrary = [];
 
 function Book(title,author,pages,status,summary) {
-
+    this.title = title,
+    this.author = author,
+    this.pages = pages,
+    this.status = status,
+    this.summary = summary
 }
 
-function addBookToLibrary(title,author,pages,status,summary) {
+function addBookToLibrary(t,a,p,status,sum) {
 // 1. create new Book object
-    let title = new Book(title,author,pages,status,summary);
+    let newBook = new Book(t,a,p,status,sum);
 // generate unique id. Must be defined here to avoid inheriting prototype's uuid...?
-    title.id = crypto.randomUUID();
+    newBook.id = crypto.randomUUID();
 // store new obj in myLibrary
-    myLibrary.push(title);
+    myLibrary.push(newBook);
 // 
 }
 
@@ -25,6 +29,7 @@ function addLibraryToPage() {
     const bookBy = document.createElement("p");
     const bookPages = document.createElement("p");
     const bookStatus = document.createElement("p");
+    const bookRemove = document.createElement("a");
 
     // assign classes to the created elements:
     bookCard.classList.add("book");
@@ -32,6 +37,11 @@ function addLibraryToPage() {
     bookBy.classList.add('author');
     bookPages.classList.add('pages');
     bookStatus.classList.add('status');
+    bookRemove.classList.add("remove");
+
+    // add innerText content:
+    bookTitle.innerText;
+
 
     // append them to the first:
     let cardParts = [bookTitle,bookBy,bookPages,bookStatus];
