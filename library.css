@@ -43,10 +43,10 @@ h1 {
     place-items: stretch center;
     text-align: center;
     grid-template-areas:
-    "cover cover"
-    "title title"
-    "author author"
-    "pages status"
+    "remove cover cover"
+    "title title title"
+    "author author author"
+    "pages pages status"
 }
 
 .cover {
@@ -55,7 +55,6 @@ h1 {
     height: 70px;
     grid-area: cover;
     margin: 3px;
-
 }
 
 .book h3 {
@@ -80,4 +79,9 @@ h1 {
 
 .book p {
     margin: 0;
+}
+
+.remove {
+    grid-area: remove;
+    place-self: start;
 }
