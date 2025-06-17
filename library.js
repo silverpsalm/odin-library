@@ -45,10 +45,22 @@ function addLibraryToPage() {
     bookBy.innerText = `by ${bk.author}`;
     bookPages.innerText = `${bk.pages} pages`;
     bookRemove.innerText = "x";
+
+    // misc values:
     bookRemove.href = "/";
-    bookRemove.addEventListener("click", removeBook());
     bookStatCheck.type = "checkbox";
-    
+
+    // event listeners:
+    bookRemove.addEventListener("click", removeBook());
+    bookStatCheck.addEventListener("change", () => { 
+        if(bookStatCheck.checked) {
+            console.log("checked");
+            // call a function here
+        } else {
+            console.log("unchecked");
+            // call another function here
+        } 
+    });
 
 
     // append them to the first:
@@ -66,6 +78,7 @@ function removeBook() {
 }
 
 // add event listeners to all status checkboxes:
+// Does this need to be outside our main function, or should an event listener be declared in the main function??
 const allStatuses = document.querySelectorAll("div.status > input");
 allStatuses.forEach(toggleStatus(chkbx));
     
