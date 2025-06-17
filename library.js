@@ -30,8 +30,8 @@ function addLibraryToPage() {
     const bookBy = document.createElement("p");
     const bookPages = document.createElement("p");
     const bookStatus = document.createElement("p");
+    const bookStatCheck = document.createElement("input");
     const bookRemove = document.createElement("a");
-
     // assign classes to the created elements:
     bookCard.classList.add("book");
     bookTitle.classList.add('title');
@@ -41,7 +41,14 @@ function addLibraryToPage() {
     bookRemove.classList.add("remove");
 
     // add innerText content:
-    bookTitle.innerText;
+    bookTitle.innerText = bk.title;
+    bookBy.innerText = `by ${bk.author}`;
+    bookPages.innerText = `${bk.pages} pages`;
+    bookRemove.innerText = "x";
+    bookRemove.href = "/";
+    bookRemove.addEventListener("click", removeBook());
+    bookStatCheck.type = "checkbox";
+    
 
 
     // append them to the first:
@@ -52,4 +59,20 @@ function addLibraryToPage() {
     }
     // NOW... we customize card parts with the function parameters.
 
+}
+
+function removeBook() {
+    // remove a book card from page
+}
+
+// add event listeners to all status checkboxes:
+const allStatuses = document.querySelectorAll("div.status > input");
+allStatuses.forEach(toggleStatus(chkbx));
+    
+function toggleStatus(x) {
+
+    x.addEventListener("change", () => { 
+        if(x.checked) {console.log("checked");} else {console.log("unchecked");} 
+    });
+    // add a bg color and text change to the above listener.
 }
