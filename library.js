@@ -19,10 +19,9 @@ function addBookToLibrary(t,a,p,status,sum) {
 }
 
 function addLibraryToPage() {
-    // iterate over myLibrary array to add books to html page.
 
+    // iterate over myLibrary[]
     for (bk of myLibrary) {
-    
     
     // create the card elements:
     const bookCard = document.createElement("div");
@@ -32,25 +31,23 @@ function addLibraryToPage() {
     const bookStatus = document.createElement("p");
     const bookStatCheck = document.createElement("input");
     const bookRemove = document.createElement("a");
-    // assign classes to the created elements:
+    // assign classes to created elements:
     bookCard.classList.add("book");
     bookTitle.classList.add('title');
     bookBy.classList.add('author');
     bookPages.classList.add('pages');
     bookStatus.classList.add('status');
     bookRemove.classList.add("remove");
-
     // add innerText content:
     bookTitle.innerText = bk.title;
     bookBy.innerText = `by ${bk.author}`;
     bookPages.innerText = `${bk.pages} pages`;
     bookRemove.innerText = "x";
-
-    // misc values:
+    // assign misc values:
     bookRemove.href = "/";
     bookStatCheck.type = "checkbox";
 
-    // event listeners:
+    // add event listeners:
     bookRemove.addEventListener("click", removeBook());
     bookStatCheck.addEventListener("change", () => { 
         if(bookStatCheck.checked) {
@@ -63,14 +60,11 @@ function addLibraryToPage() {
     });
 
 
-    // append them to the first:
+    // append parts to the card body:
     let cardParts = [bookTitle,bookBy,bookPages,bookStatus];
-
     bookCard.appendChild(cardParts);
 
     }
-    // NOW... we customize card parts with the function parameters.
-
 }
 
 function removeBook() {
