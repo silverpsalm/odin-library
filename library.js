@@ -21,8 +21,9 @@ function addBookToLibrary(t,a,p,status,sum) {
 function addLibraryToPage() {
     // iterate over myLibrary array to add books to html page.
 
-    // the for...each card template:
-
+    for (bk of myLibrary) {
+    
+    
     // create the card elements:
     const bookCard = document.createElement("div");
     const bookTitle = document.createElement("p");
@@ -48,6 +49,7 @@ function addLibraryToPage() {
 
     bookCard.appendChild(cardParts);
 
+    }
     // NOW... we customize card parts with the function parameters.
 
 }
